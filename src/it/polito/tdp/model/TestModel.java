@@ -8,6 +8,7 @@ public class TestModel {
 		
 		model.creaGrafoDistretti(2015);
 		System.out.println(model.getElencoDistretti());
+		model.simula(10, 1, 9, 2015);
 	}
 
 }

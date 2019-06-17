@@ -1,6 +1,8 @@
 package it.polito.tdp.model;
 
 import com.javadocmd.simplelatlng.LatLng;
+import com.javadocmd.simplelatlng.LatLngTool;
+import com.javadocmd.simplelatlng.util.LengthUnit;
 
 public class District {
 
@@ -74,7 +76,11 @@ public class District {
 
 	@Override
 	public String toString() {
-		return "["+this.district_id+"]";
+		return "[" + this.district_id + "]";
+	}
+
+	public double distanzada(District d) {
+		return LatLngTool.distance(this.coords, d.getCoords(), LengthUnit.KILOMETER);
 	}
 
 }

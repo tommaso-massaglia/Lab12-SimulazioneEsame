@@ -1,5 +1,6 @@
 package it.polito.tdp.model;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -95,4 +96,12 @@ public class Model {
 		}
 		return result;
 	}
+
+	public void simula (int N, int giorno, int mese, int anno) {
+		Simulatore sim = new Simulatore();
+		sim.init(grafo, N, LocalDateTime.of(anno, mese, giorno, 0, 0, 0),districtidmap);
+		sim.run();
+		System.out.println("Numero eventi getiti male: "+sim.getMalgestiti());
+	} 	
+	
 }
